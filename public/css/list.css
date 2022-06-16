@@ -1,0 +1,251 @@
+.list__body{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* filer  */
+
+.list_filter{
+    margin-top: -50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 3px 11px 0 rgb(0 0 0 / 9%);
+}
+
+.list_filter p{
+    padding: 0;
+    margin-right: 15px;
+    max-width: 225px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -.44px;
+    color: #333;
+    background-color: inherit;
+    border-radius: 0;
+} 
+
+
+.list_filter .clear_btn{
+    font-size: 14px;
+    line-height: 1.57;
+    color: #555;
+} 
+
+.filter_input_box{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 15px;
+    height: 68px;
+    border-radius: 4px;
+    border: 1px solid #bebebe;
+    padding: 0 15px;
+}
+
+.filter_input_box label{
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333;
+}
+
+select{
+    padding: 0 16px 8px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+/* list body */
+
+.list__continer{
+    display: flex;
+}
+
+
+/* sidebar list styling  */
+/* ================================================ */
+
+.sidebar{
+    flex: 0 0 25%;
+    max-width: 25%;
+    width: 100%;
+}
+
+.sidebar .visit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 51.4px 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 15px;
+}
+
+.visit .count{
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 1;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.visit .title{
+    font-size: 18px;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 26px;
+}
+
+/* main list styling  */
+/* ================================================ */
+
+.list {
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 20px;
+}
+
+.list_box{
+    width: 100%;
+    margin-bottom: 9px;
+    overflow: hidden;
+    padding: 4px 5px;
+    min-height: 190px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0 rgb(151 169 197 / 55%);
+    transition: border .5s ease 0s,box-shadow .2s ease 0s,transform .2s ease 0s;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list_box div{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    padding: 0 20px;
+}
+
+/* intro  */
+
+.list_box .intro img{
+    width: 100%;
+    max-width: 170px;
+    max-height: 73px;
+}
+
+.intro .more {
+    cursor: pointer;
+    font-size: 13px;
+    color: #78769e;
+    margin-top: 50px;
+}
+
+/* main info area */
+
+.list_box .info {
+    display: flex;
+    align-items: flex-start;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+}
+
+
+.info .brand_title{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: #353449;
+}
+
+.info .main_brand_line {
+    border-radius: 7px;
+    border: 1.5px solid rgba(93,81,243,.4);
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.33;
+    text-align: center;
+    color: #5d51f3;
+    padding: 2px 10px;
+    margin-top: 7px;
+    margin-bottom: 15px;
+}
+
+.info .brand_selling_line {
+    padding-left: 4px ;
+}
+
+.info .brand_selling_line li{
+    list-style-type: none;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    line-height: 1;
+    font-weight: 400;
+    padding: 0;
+}
+
+.info .brand_selling_line li::before {
+    content: "";
+    background: url(https://lendstart.com/app/themes/lendstart/front/img/svg/checkmark-green.svg) no-repeat 50%/cover;
+    display: block;
+    min-width: 13px;
+    min-height: 10px;
+    margin-top: 1px;
+    margin-right: 10px;
+    position: relative;
+    top: 0;
+}
+
+/* cta button  */
+
+.list_box .cta {
+    width: 19%;
+}
+
+.cta .visit {
+    width: auto;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.36;
+    color: #127dff;
+    text-decoration: none;
+}
+
+.cta .btn_cta{
+    background: #38b559;
+    padding: 10px 20px 9px;
+    max-width: 180px;
+    color: #fff;
+    transition: .3s;
+    white-space: nowrap;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.22;
+    text-decoration: none;
+    width: 55%;
+    text-align: center;
+}
+
