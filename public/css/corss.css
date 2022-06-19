@@ -1,0 +1,21 @@
+.crossbanner{
+    padding: 30px 0;
+    background: #eeeff3;
+    margin-top: 20px;
+}
+
+.crossbanner .list__continer{
+    display: block;
+}
+
+.crossbanner .corss_title{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.crossbanner .list{
+    display: block;
+    padding: 0px;
+    max-width: 1200px;
+    margin: auto;
+}

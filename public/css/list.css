@@ -116,22 +116,30 @@ select{
 .list {
     flex: 0 0 75%;
     max-width: 75%;
-    padding-right: 20px;
+    padding-right: 15px;
+}
+
+.list_item{
+    box-shadow: 0 0 4px 0 rgb(151 169 197 / 55%);
+    transition: border .5s ease 0s,box-shadow .2s ease 0s,transform .2s ease 0s;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
 }
 
 .list_box{
-    width: 100%;
     margin-bottom: 9px;
     overflow: hidden;
     padding: 4px 5px;
     min-height: 190px;
     border-radius: 10px;
-    box-shadow: 0 0 4px 0 rgb(151 169 197 / 55%);
-    transition: border .5s ease 0s,box-shadow .2s ease 0s,transform .2s ease 0s;
     background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    /* more info test */
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .list_box div{
@@ -151,11 +159,11 @@ select{
     max-height: 73px;
 }
 
-.intro .more {
+.more {
     cursor: pointer;
     font-size: 13px;
     color: #78769e;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 /* main info area */
@@ -224,7 +232,7 @@ select{
     width: 19%;
 }
 
-.cta .visit {
+.visit_link {
     width: auto;
     margin-top: 20px;
     font-size: 14px;
@@ -245,7 +253,95 @@ select{
     font-weight: 700;
     line-height: 1.22;
     text-decoration: none;
-    width: 55%;
     text-align: center;
 }
 
+/* more info tab */
+/* ==============================  */
+
+.more_info {
+    display: flex;
+    background: #f6f6f8;
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 15px ;
+}
+
+.more_info div {
+    padding: 20px;
+}
+
+.more_info .sub_title {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #555;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.more_info li {
+    color: #555;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.46;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+/* more info facts */
+.more_info .facts{
+    width: 40%;
+    border-right: 1px solid #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.facts li{
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    line-height: 1;
+    padding: 0;
+}
+
+.facts li::before {
+    content: "";
+    background: url(https://lendstart.com/app/themes/lendstart/front/img/svg/checkmark-green.svg) no-repeat 50%/cover;
+    display: block;
+    min-width: 13px;
+    min-height: 10px;
+    margin-top: 1px;
+    margin-right: 10px;
+    position: relative;
+    top: 0;
+}
+
+.more_info .pros ul {
+    padding-left: 40px;
+}
+
+
+.new_more{
+    background-color: #fff;
+    padding-left: 65px;
+    margin-top: -45px;
+    padding-bottom: 30px;
+    padding-left: 65px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar{
+        display: none;
+    }
+
+    .list {
+        flex: 0 0 98%;
+        max-width: 99%;
+        padding-right: 0px;
+  }
+
+  .list__continer {
+    display: flex;
+    justify-content: center;
+}}
