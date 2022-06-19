@@ -111,6 +111,10 @@ select{
     margin-bottom: 26px;
 }
 
+.ad img{
+    margin: 15px;
+}
+
 /* main list styling  */
 /* ================================================ */
 
@@ -356,4 +360,17 @@ select{
   .list__continer {
     display: flex;
     justify-content: center;
-}}
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .list_filter{
+        display: none;
+    }
+
+    .list__body{
+        margin-top: -30px;
+    }
+
+}
