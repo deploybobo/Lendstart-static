@@ -17,11 +17,11 @@ main .sidebar div{
     margin: 5px;
 }
 
-.sidebar .read_more{
+main .sidebar .read_more{
     margin-top: 30px;
 }
 
-.sidebar .sidebar__title {
+main .sidebar .sidebar__title {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.04;
@@ -32,21 +32,21 @@ main .sidebar div{
     
 }
 
-.sidebar details,.sidebar article{
+main .sidebar details,.sidebar article{
     border-top: 1px solid #d8dade;
     margin-bottom: 15px;
     padding-top: 15px;
 
 }
 
-.article__title , .sidebar summary{
+main .article__title , .sidebar summary{
     font-size: 16px;
     font-weight: 700;
     line-height: 1.56;
     color: #333;
 }
 
-.sidebar p {
+main .sidebar p {
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
@@ -57,12 +57,12 @@ main .sidebar div{
 
 /* sidebar  */
 
-.text-content h2, .text-content h3 {
+main .text-content h2, .text-content h3 {
     margin-top: 15px;
     margin-bottom: 5px;
 } 
 
-.post_content{
+main .post_content{
     flex: 0 0 75%;
     max-width: 75%;
     width: 100%;
@@ -70,11 +70,11 @@ main .sidebar div{
 
 }
 
-.text-content{
+main .text-content{
     width: 100%;
 }
 
-.text-content p {
+main .text-content p {
     font-size: 18px; 
     font-weight: 300;
     color: #555;
@@ -82,6 +82,6 @@ main .sidebar div{
     margin-bottom: 20px;
 }
 
-.text-content img{
+main .text-content img{
     width: 95%;
 }
