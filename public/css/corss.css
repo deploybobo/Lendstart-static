@@ -11,6 +11,8 @@
 .crossbanner .corss_title{
     max-width: 1200px;
     margin: auto;
+    padding-left: 20px;
+    padding-bottom: 6px;
 }
 
 .crossbanner .list{
@@ -18,4 +20,18 @@
     padding: 0px;
     max-width: 1200px;
     margin: auto;
+}
+
+.crossbanner .list_item {
+    margin: 0 10px;
+    margin-bottom: 8px;
+}
+
+.crossbanner .new_more{
+    padding-left: 9%;
+}
+
+
+.crossbanner .list_box .intro img {
+    margin-top: -30px;
 }

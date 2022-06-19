@@ -65,6 +65,7 @@ select{
     color: #333;
     border: none;
     outline: none;
+    background-color: #fff;
 }
 
 /* list body */
@@ -153,10 +154,15 @@ select{
 
 /* intro  */
 
+.list_box .intro {
+    width: 20%;
+}
+
 .list_box .intro img{
     width: 100%;
     max-width: 170px;
     max-height: 73px;
+    margin-top: -20px;
 }
 
 .more {
@@ -169,10 +175,16 @@ select{
 /* main info area */
 
 .list_box .info {
+    width: 40%;
     display: flex;
     align-items: flex-start;
     border-left: 1px solid #e2e2e2;
     border-right: 1px solid #e2e2e2;
+}
+
+.list_box .info div {
+    display: flex;
+    align-items: flex-start;
 }
 
 

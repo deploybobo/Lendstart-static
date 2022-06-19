@@ -83,5 +83,6 @@ main .text-content p {
 }
 
 main .text-content img{
-    width: 95%;
+    width: 100%;
+    height: auto;
 }
