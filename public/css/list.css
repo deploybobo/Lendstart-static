@@ -374,3 +374,58 @@ select{
     }
 
 }
+
+/* mobile */
+/* ============================ */
+
+@media only screen and (max-width: 768px) {
+    .list_item{
+        margin-bottom: 20px;
+    }
+
+    .list_box{
+        padding: 25px 0 ;
+        flex-direction: column;
+    }
+
+    .list_box div{
+        width: 80% !important;
+        border: none !important;
+    }
+
+    .box .intro img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .brand_title{
+        display: none;
+    }
+
+    .main_brand_line{
+        display: none;
+    }
+
+    .more_info{
+        flex-direction:column-reverse;
+
+    }
+
+    .more_info .facts{
+        width: 90%;
+    }
+
+    .new_more{
+        background-color:#f6f6f8;
+        text-align: center;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .cta .visit_link{
+        display: none;
+    }
+}
