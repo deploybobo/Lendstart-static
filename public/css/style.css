@@ -50,13 +50,15 @@ ul{
     }
 
     .top .content{
+        padding-top: 20px;
         padding-bottom: 40px;
     }
 
     .top .content p {
         font-weight: 300;
         line-height: 1.67;
-        font-size: 18px;
+        font-size: 16px;
+        margin-top: 4px;
         margin: 0;
     }
     
