@@ -25,7 +25,7 @@ ul{
 }
 
 .top .content p {
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.67;
     font-size: 18px;
     margin: 0;
@@ -55,7 +55,6 @@ ul{
     }
 
     .top .content p {
-        font-weight: 300;
         line-height: 1.67;
         font-size: 16px;
         margin-top: 4px;

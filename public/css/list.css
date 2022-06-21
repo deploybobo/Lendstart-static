@@ -84,6 +84,10 @@ select{
     width: 100%;
 }
 
+.sidebar .visit p {
+    margin: 2px;
+}
+
 .sidebar .visit{
     display: flex;
     flex-direction: column;
@@ -98,7 +102,7 @@ select{
 
 .visit .count{
     font-size: 40px;
-    font-weight: 200;
+    font-weight: 400;
     line-height: 1;
     margin-top: 8px;
     margin-bottom: 5px;
@@ -108,7 +112,7 @@ select{
     font-size: 18px;
     color: #333;
     line-height: 1;
-    margin-bottom: 26px;
+    padding-bottom: 24px;
 }
 
 .ad img{
