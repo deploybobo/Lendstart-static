@@ -12,6 +12,10 @@ ul{
     padding: 4px;
 }
 
+p {
+    margin: 2px;
+}
+
 /* top page area */
 .top{
     color: #fff;
