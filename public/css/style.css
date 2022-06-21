@@ -41,3 +41,35 @@ ul{
     font-size: 14px;
     margin-bottom: 7px;
 }
+
+@media only screen and (max-width: 800px) {
+    .top{
+        background: #fff;
+        color: black;
+        margin-bottom: 40px;
+    }
+
+    .top .content{
+        padding-bottom: 40px;
+    }
+
+    .top .content p {
+        font-weight: 300;
+        line-height: 1.67;
+        font-size: 18px;
+        margin: 0;
+    }
+    
+    .top .content h1{
+        font-size: 36px;
+        font-weight: 700;
+    }
+    .top .content .date{
+        color: #5a4fef;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+    
+
+}
