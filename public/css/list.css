@@ -143,8 +143,8 @@ select{
     align-items: center;
     justify-content: space-around;
     /* more info test */
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .list_box div{
@@ -230,7 +230,7 @@ select{
     padding: 0;
 }
 
-.info .brand_selling_line li::before {
+.info .brand_selling_line li::before , .facts li::before {
     content: "";
     background: url(https://lendstart.com/app/themes/lendstart/front/img/svg/checkmark-green.svg) no-repeat 50%/cover;
     display: block;
@@ -321,17 +321,6 @@ select{
     padding: 0;
 }
 
-.facts li::before {
-    content: "";
-    background: url(https://lendstart.com/app/themes/lendstart/front/img/svg/checkmark-green.svg) no-repeat 50%/cover;
-    display: block;
-    min-width: 13px;
-    min-height: 10px;
-    margin-top: 1px;
-    margin-right: 10px;
-    position: relative;
-    top: 0;
-}
 
 .more_info .pros ul {
     padding-left: 40px;
@@ -354,7 +343,7 @@ select{
     .list {
         flex: 0 0 98%;
         max-width: 99%;
-        padding-right: 0px;
+        padding-right: 0;
   }
 
   .list__continer {
@@ -408,7 +397,6 @@ select{
 
     .more_info{
         flex-direction:column-reverse;
-
     }
 
     .more_info .facts{
@@ -418,9 +406,9 @@ select{
     .new_more{
         background-color:#f6f6f8;
         text-align: center;
-        margin-top: 0px;
-        padding-bottom: 0px;
-        padding-left: 0px;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
         padding: 10px;
         font-size: 16px;
     }
