@@ -7,21 +7,21 @@ function initMobile(){
         menu.style.display = 'none'
         document.querySelectorAll('.category').forEach( ( el )=>{
             el.setAttribute("onclick","return false;");
-        })
+        });
     }
     else{
-        menu.style.display = 'flex'
+        menu.style.display = 'flex';
     }
 
 };
 
 menuButton.addEventListener("click", () =>{
     if(menu.style.display == 'none'){
-        menu.style.display = 'block'
-        document.body.style.overflow = "hidden"
+        menu.style.display = 'block';
+        document.body.style.overflow = "hidden";
     }else{
-        menu.style.display = 'none'
-        document.body.style.overflow = "visible"
+        menu.style.display = 'none';
+        document.body.style.overflow = "visible";
     }
 
 });
