@@ -35,3 +35,18 @@
 .crossbanner .list_box .intro img {
     margin-top: -30px;
 }
+
+.crossbanner .ribben{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .crossbanner .list_box .intro img {
+        margin-top: 0;
+        max-width: 220px;
+        height: 80px;
+    }
+    
+    
+}

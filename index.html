@@ -8,7 +8,7 @@
     <link rel="icon" href="https://assets.trafficpointltd.com/app/uploads/sites/136/2019/05/03133736/cropped-lendstart_favicon1-32x32.png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/header.css">
     <link rel="stylesheet" href="public/css/list.css">
@@ -28,17 +28,17 @@
 
         <nav>
 
-            <label for="hamburger">
+            <label id="mobile_menu_btn" for="hamburger">
                 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                     <style>.a{fill:#fff}</style><path class="a" d="m21 5q0.4 0 0.7 0.3 0.3 0.3 0.3 0.7 0 0.4-0.3 0.7-0.3 0.3-0.7 0.3h-18q-0.4 0-0.7-0.3-0.3-0.3-0.3-0.7 0-0.4 0.3-0.7 0.3-0.3 0.7-0.3zm0 6q0.4 0 0.7 0.3 0.3 0.3 0.3 0.7 0 0.4-0.3 0.7-0.3 0.3-0.7 0.3h-18q-0.4 0-0.7-0.3-0.3-0.3-0.3-0.7 0-0.4 0.3-0.7 0.3-0.3 0.7-0.3zm0 6q0.4 0 0.7 0.3 0.3 0.3 0.3 0.7 0 0.4-0.3 0.7-0.3 0.3-0.7 0.3h-18q-0.4 0-0.7-0.3-0.3-0.3-0.3-0.7 0-0.4 0.3-0.7 0.3-0.3 0.7-0.3z"/>
                 </svg>
             </label>
-            <input type="checkbox" id="hamburger" style="display: none ;"/>
+            <!-- <input type="checkbox" id="hamburger" style="display: none ;"/> -->
           
 
-            <ul>
+            <ul id="menu">
                 <li>
-                    <a href="">Personal Loans</a>
+                    <a href="" class="category">Personal Loans</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -69,7 +69,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Debt Consolidation</a>
+                    <a href="" class="category" >Debt Consolidation</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -93,7 +93,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Mortgage</a>
+                    <a href="" class="category" >Mortgage</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -121,7 +121,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Tax Relief</a>
+                    <a href="" class="category" >Tax Relief</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -146,7 +146,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Business Loans</a>
+                    <a href="" class="category">Business Loans</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -178,7 +178,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Student Loans</a>
+                    <a href="" class="category">Student Loans</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -205,7 +205,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="">Banking</a>
+                    <a href="" class="category" >Banking</a>
                     <div class="sub__menu">
                         <ul>
                             <p>Compare</p>
@@ -286,18 +286,15 @@
                 <!-- brands -->
                 <!-- 1 -->
                 <div class="list_item">
+                    <div class="ribben">Editor's Choice</div>
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img src="https://assets.trafficpointltd.com/app/uploads/sites/136/2020/10/04115204/amerisave_horizontal_nmls_l.svg" alt="amerisave" width="170" height="73">
                             </a>
-    
-                            <!-- <P class="more"> View details </P> -->
-    
+        
                         </div>
     
                         <div class="info">
@@ -379,12 +376,11 @@
                 <!-- 2 -->
 
                 <div class="list_item">
+                    <div class="ribben">Low Rates</div>
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img src="https://assets.trafficpointltd.com/app/uploads/sites/136/2021/05/05151556/Quicken_Loans.svg" alt="Quicken_Loans" width="170" height="73">
                             </a>
@@ -478,9 +474,7 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2020/01/30111955/Rocket-Mortgage-logo-NMLS-3.svg" alt="Rocket-Mortgage" width="170" height="73">
                             </a>
@@ -571,9 +565,7 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2021/08/22084324/VUlogo_Legal.svg" alt="Veterans United" width="170" height="73">
                             </a>
@@ -664,9 +656,7 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2020/02/01112407/Logo_MR_new-american-funding-NMLS-4.2021.svg" alt="Veterans United" width="170" height="73">
                             </a>
@@ -757,9 +747,7 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/2022/06/13174012/Bankrate_-l.svg" alt="Bankrate" width="170" height="73">
                             </a>
@@ -850,9 +838,7 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2022/03/10124702/mutual-brand-blue.svg" alt="Mutual of Omaha" width="170" height="73">
                             </a>
@@ -977,15 +963,11 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2020/10/04115204/amerisave_horizontal_nmls_l.svg" alt="amerisave" width="170" height="73">
                             </a>
-    
-                            <!-- <P class="more"> View details </P> -->
-    
+        
                         </div>
     
                         <div class="info">
@@ -1069,15 +1051,11 @@
                     <div class="list_box">
 
                         <div class="intro">
-    
-                            <span class="ribben"></span>
-    
+        
                             <a href="/">
                                 <img loading="lazy" src="https://assets.trafficpointltd.com/app/uploads/sites/136/2020/01/30111955/Rocket-Mortgage-logo-NMLS-3.svg" alt="Rocket-Mortgage" width="170" height="73">
                             </a>
-    
-                            <!-- <P class="more"> View details </P> -->
-    
+        
                         </div>
     
                         <div class="info">
@@ -1386,5 +1364,6 @@
 
     </footer>
 
+    <script src="public/js/menu.js"></script>
 </body>
 </html>

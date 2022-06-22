@@ -48,7 +48,7 @@ header nav ul li:hover .sub__menu {
     left:0;
     width: 100%;
     padding: 25px 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 .sub__menu ul{
@@ -115,19 +115,33 @@ header nav ul li:hover .sub__menu {
     }
 
 
-    header nav input:checked ~ ul {
+    /* header nav input:checked ~ ul {
         display: block;
         margin-top: 2px;
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         left: 0;
         background: #353449;
         width: 100%;
         height: 100%;
         border-top: 1px solid #504f62;
         box-shadow: 0 14px 18.8px 1.2px rgb(0 0 0 / 30%);
-    }
+    } */
 
+    header nav ul {
+        display: none;
+        margin-top: 2px;
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        background: #353449;
+        width: 80%;
+        height: 100%;
+        border-top: 1px solid #504f62;
+        box-shadow: 0 14px 18.8px 1.2px rgb(0 0 0 / 30%);
+        overflow-y: scroll;
+        margin-bottom: 30px;
+    }
 
     header nav ul li{
         border-bottom: 1px solid #504f62;
@@ -143,12 +157,23 @@ header nav ul li:hover .sub__menu {
 
     .sub__menu{
         background-color: #353449;
+        overflow-x: hidden;
     }
 
     .sub__menu ul{
         list-style-position: inside;
         list-style-type: circle;
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+        padding-right: 5px;
+        overflow-x: hidden;
     }
+
+    .sub__menu ul:last-of-type{
+        padding-bottom: 30px;
+    }
+
 
     .sub__menu ul p{
         padding: 5px;
