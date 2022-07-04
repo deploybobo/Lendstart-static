@@ -3,6 +3,7 @@ const menu = document.querySelector("#menu");
 window.onresize = initMobile;
 const defaultScore = 690;
 var listdata;
+var listdatab;
 
 function initMobile() {
   if (window.innerWidth < 1100) {
@@ -225,6 +226,98 @@ window.onload = function () {
       console.log(document.getElementsByClassName("list"));
     //   document.getElementsByClassName("list")[0].replaceChildren(...list);
     //   document.getElementsByClassName("list")[0].style.visibility = "visible";
+    });
+
+    fetch(`http://unicorn.dock-stg.trafficpointltd.com/api/v1/sites/136/lists/762.json?forSite=1&isWeightRotated=1&_user-agent=${window.navigator.userAgent}&_ip=84.110.37.255&Device=c`, {
+    headers: {
+      Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC91bmljb3JuLmRvY2stc3RnLnRyYWZmaWNwb2ludGx0ZC5jb21cLyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxNjAwOTM5MzQxLCJuYmYiOjE2MDA5MzkzNDEsInN1YiI6IlNZU1RFTV9BUEkifQ.odcl6OHUf8-obQvL0SBIwjw4q6mgsichmBYC8Q0LjtM",
+    },
+  })
+    .then((response) => response.json())
+    .then(function (data) {
+      console.log(data.data.desktop);
+      document.querySelectorAll(".list")[1].innerHTML = '';
+      listdatab = data.data.desktop.brands; 
+      listdatab.forEach((brand) => {
+        let id = brand.brand_id;
+        brandlist.forEach(br =>{
+            if( id === br.brand_id ){
+            var list_item =
+            `<div class="list_item">
+            ${ribbon(brand.ribbonName)}
+            <div class="list_box">
+
+                <div class="intro">
+
+                    <a href="${br.outlink}">
+                        <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73">
+                    </a>
+
+                </div>
+
+                <div class="info">
+
+                    <div>
+                        <a href="${br.outlink}">
+                            <p class="brand_title">
+                                ${br.brand_name}
+                            </p>
+                        </a>
+
+                        <a href="${br.outlink}">
+                            <p class="main_brand_line">
+                                ${br.brand_selling_line}
+                            </p>
+                        </a>
+
+                        <ul class="brand_selling_line">
+                            ${br.selling_lines}
+                        </ul>
+                    </div>
+
+                </div>
+                
+                <div class="cta">
+
+                    <a class="btn_cta" href="${br.outlink}">Get my rate</a>
+                    <a class="visit_link" href="${br.outlink}">Visit site »</a>
+
+                </div>
+                
+            </div>
+
+            <details>
+
+                <summary class="more new_more">View details</summary>
+                <div class="more_info">
+                    
+                    <div class="facts">
+                        <span>
+                            <p class="sub_title">Key Facts</p>
+                            ${br.key_facts}
+                        </span>
+
+                        <a class="visit_link" href="${br.brand_link}">Read ${br.brand_name} Review »</a>
+
+                    </div>
+
+                    <div class="pros">
+                        
+                        ${br.pros_cons}
+
+                    </div>
+                </div>
+
+            </details>
+
+            </div>`;
+                document.querySelectorAll(".list")[1].innerHTML += list_item;
+            }
+        })
+
+      });
+      console.log(document.getElementsByClassName("list"));
+
     });
 };
 
