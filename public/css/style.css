@@ -51,6 +51,7 @@ p {
         background: #fff;
         color: black;
         margin-bottom: 40px;
+        background-image: linear-gradient(0deg,#464298,#353449);
     }
 
     .top .content{
@@ -63,11 +64,13 @@ p {
         font-size: 16px;
         margin-top: 4px;
         margin: 0;
+        display: none;
     }
     
     .top .content h1{
         font-size: 36px;
         font-weight: 700;
+        color: #fff;
     }
     .top .content .date{
         color: #5a4fef;

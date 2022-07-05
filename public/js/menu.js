@@ -4,6 +4,8 @@ window.onresize = initMobile;
 const defaultScore = 690;
 var listdata;
 var listdatab;
+var client_ip = geoplugin_request()
+
 
 function initMobile() {
   if (window.innerWidth < 1100) {
@@ -134,191 +136,184 @@ function ribbon(ribbonName){
 }
 
 
+const data = JSON.parse(localStorage.getItem('list'));
+let outdata = data;
+document.querySelector(".list").innerHTML = '';
+listdata = data.desktop.brands; 
+data.desktop.brands.forEach((brand, i) => {
+    let id = brand.brand_id;
+    let pos = ++i;
+    brandlist.forEach(br =>{
+        if( id === br.brand_id ){
+        var list_item =
+        `<div class="list_item">
+        ${ribbon(brand.ribbonName)}
+        <div class="list_box">
+
+            <div class="intro">
+
+                <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-logo&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >
+                    <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73">
+                </a>
+
+            </div>
+
+            <div class="info">
+
+                <div>
+                    <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-name&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow">
+                        <p class="brand_title">
+                            ${br.brand_name}
+                        </p>
+                    </a>
+
+                    <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-amount&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >
+                        <p class="main_brand_line">
+                            ${br.brand_selling_line}
+                        </p>
+                    </a>
+
+                    <ul class="brand_selling_line">
+                        ${br.selling_lines}
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="cta">
+
+                <a class="btn_cta" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-btn&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Get my rate</a>
+                <a class="visit_link" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-text&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Visit site »</a>
+
+            </div>
+            
+        </div>
+
+        <details>
+
+            <summary class="more new_more">View details</summary>
+            <div class="more_info">
+                
+                <div class="facts">
+                    <span>
+                        <p class="sub_title">Key Facts</p>
+                        ${br.key_facts}
+                    </span>
+
+                    <a class="visit_link" href="${br.brand_link}" target="_blank" rel="nofollow" >Read ${br.brand_name} Review »</a>
+
+                </div>
+
+                <div class="pros">
+                    
+                    ${br.pros_cons}
+
+                </div>
+            </div>
+
+        </details>
+
+        </div>`;
+            document.querySelector(".list").innerHTML += list_item;
+            document.getElementsByClassName("list")[0].style.visibility = "visible";
+        }
+    })
+
+});
+
+
+
 window.onload = function () {
-  fetch(`http://unicorn.dock-stg.trafficpointltd.com/api/v1/sites/136/lists/758.json?forSite=1&isWeightRotated=1&_user-agent=${window.navigator.userAgent}&_ip=84.110.37.255&Device=c`, {
-    headers: {
-      Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC91bmljb3JuLmRvY2stc3RnLnRyYWZmaWNwb2ludGx0ZC5jb21cLyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxNjAwOTM5MzQxLCJuYmYiOjE2MDA5MzkzNDEsInN1YiI6IlNZU1RFTV9BUEkifQ.odcl6OHUf8-obQvL0SBIwjw4q6mgsichmBYC8Q0LjtM",
-    },
-  })
-    .then((response) => response.json())
-    .then(function (data) {
-      console.log(data.data.desktop);
-      document.querySelector(".list").innerHTML = '';
-      listdata = data.data.desktop.brands; 
-      data.data.desktop.brands.forEach((brand) => {
-        let id = brand.brand_id;
-        brandlist.forEach(br =>{
-            if( id === br.brand_id ){
-            var list_item =
-            `<div class="list_item">
-            ${ribbon(brand.ribbonName)}
-            <div class="list_box">
+    fetch(`http://unicorn.dock-stg.trafficpointltd.com/api/v1/sites/136/lists/762.json?forSite=1&isWeightRotated=1&openList=true&_user-agent=${window.navigator.userAgent}&_ip=84.110.37.255&Device=c`)
+        .then((response) => response.json())
+        .then(function (data) {
+        let outdata = data.data;
+        console.log(data.data.desktop);
+        document.querySelectorAll(".list")[1].innerHTML = '';
+        listdatab = data.data.desktop.brands; 
+        listdatab.forEach((brand , i) => {
+            let id = brand.brand_id;
+            let pos = ++i;
+            brandlist.forEach(br =>{
+                if( id === br.brand_id ){
+                var list_item =
+                `<div class="list_item">
+                ${ribbon(brand.ribbonName)}
+                <div class="list_box">
 
-                <div class="intro">
+                    <div class="intro">
 
-                    <a href="${br.outlink}">
-                        <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73">
-                    </a>
-
-                </div>
-
-                <div class="info">
-
-                    <div>
-                        <a href="${br.outlink}">
-                            <p class="brand_title">
-                                ${br.brand_name}
-                            </p>
+                        <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-logo&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow">
+                            <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73">
                         </a>
 
-                        <a href="${br.outlink}">
-                            <p class="main_brand_line">
-                                ${br.brand_selling_line}
-                            </p>
-                        </a>
-
-                        <ul class="brand_selling_line">
-                            ${br.selling_lines}
-                        </ul>
                     </div>
 
-                </div>
-                
-                <div class="cta">
+                    <div class="info">
 
-                    <a class="btn_cta" href="${br.outlink}">Get my rate</a>
-                    <a class="visit_link" href="${br.outlink}">Visit site »</a>
+                        <div>
+                            <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-name&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow">
+                                <p class="brand_title">
+                                    ${br.brand_name}
+                                </p>
+                            </a>
 
-                </div>
-                
-            </div>
+                            <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-amount&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow">
+                                <p class="main_brand_line">
+                                    ${br.brand_selling_line}
+                                </p>
+                            </a>
 
-            <details>
+                            <ul class="brand_selling_line">
+                                ${br.selling_lines}
+                            </ul>
+                        </div>
 
-                <summary class="more new_more">View details</summary>
-                <div class="more_info">
+                    </div>
                     
-                    <div class="facts">
-                        <span>
-                            <p class="sub_title">Key Facts</p>
-                            ${br.key_facts}
-                        </span>
-
-                        <a class="visit_link" href="${br.brand_link}">Read ${br.brand_name} Review »</a>
-
-                    </div>
-
-                    <div class="pros">
+                    <div class="cta">
                         
-                        ${br.pros_cons}
+                        <a class="btn_cta" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-btn&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Get my rate</a>
+                        <a class="visit_link" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-text&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Visit site »</a>
 
                     </div>
-                </div>
-
-            </details>
-
-            </div>`;
-                document.querySelector(".list").innerHTML += list_item;
-            }
-        })
-
-      });
-      console.log(document.getElementsByClassName("list"));
-    //   document.getElementsByClassName("list")[0].replaceChildren(...list);
-    //   document.getElementsByClassName("list")[0].style.visibility = "visible";
-    });
-
-    fetch(`http://unicorn.dock-stg.trafficpointltd.com/api/v1/sites/136/lists/762.json?forSite=1&isWeightRotated=1&_user-agent=${window.navigator.userAgent}&_ip=84.110.37.255&Device=c`, {
-    headers: {
-      Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC91bmljb3JuLmRvY2stc3RnLnRyYWZmaWNwb2ludGx0ZC5jb21cLyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxNjAwOTM5MzQxLCJuYmYiOjE2MDA5MzkzNDEsInN1YiI6IlNZU1RFTV9BUEkifQ.odcl6OHUf8-obQvL0SBIwjw4q6mgsichmBYC8Q0LjtM",
-    },
-  })
-    .then((response) => response.json())
-    .then(function (data) {
-      console.log(data.data.desktop);
-      document.querySelectorAll(".list")[1].innerHTML = '';
-      listdatab = data.data.desktop.brands; 
-      listdatab.forEach((brand) => {
-        let id = brand.brand_id;
-        brandlist.forEach(br =>{
-            if( id === br.brand_id ){
-            var list_item =
-            `<div class="list_item">
-            ${ribbon(brand.ribbonName)}
-            <div class="list_box">
-
-                <div class="intro">
-
-                    <a href="${br.outlink}">
-                        <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73">
-                    </a>
-
-                </div>
-
-                <div class="info">
-
-                    <div>
-                        <a href="${br.outlink}">
-                            <p class="brand_title">
-                                ${br.brand_name}
-                            </p>
-                        </a>
-
-                        <a href="${br.outlink}">
-                            <p class="main_brand_line">
-                                ${br.brand_selling_line}
-                            </p>
-                        </a>
-
-                        <ul class="brand_selling_line">
-                            ${br.selling_lines}
-                        </ul>
-                    </div>
-
-                </div>
-                
-                <div class="cta">
-
-                    <a class="btn_cta" href="${br.outlink}">Get my rate</a>
-                    <a class="visit_link" href="${br.outlink}">Visit site »</a>
-
-                </div>
-                
-            </div>
-
-            <details>
-
-                <summary class="more new_more">View details</summary>
-                <div class="more_info">
                     
-                    <div class="facts">
-                        <span>
-                            <p class="sub_title">Key Facts</p>
-                            ${br.key_facts}
-                        </span>
-
-                        <a class="visit_link" href="${br.brand_link}">Read ${br.brand_name} Review »</a>
-
-                    </div>
-
-                    <div class="pros">
-                        
-                        ${br.pros_cons}
-
-                    </div>
                 </div>
 
-            </details>
+                <details>
 
-            </div>`;
-                document.querySelectorAll(".list")[1].innerHTML += list_item;
-            }
-        })
+                    <summary class="more new_more">View details</summary>
+                    <div class="more_info">
+                        
+                        <div class="facts">
+                            <span>
+                                <p class="sub_title">Key Facts</p>
+                                ${br.key_facts}
+                            </span>
 
-      });
-      console.log(document.getElementsByClassName("list"));
+                            <a class="visit_link" href="${br.brand_link}">Read ${br.brand_name} Review »</a>
 
-    });
+                        </div>
+
+                        <div class="pros">
+                            
+                            ${br.pros_cons}
+
+                        </div>
+                    </div>
+
+                </details>
+
+                </div>`;
+                    document.querySelectorAll(".list")[1].innerHTML += list_item;
+                    document.getElementsByClassName("list")[0].style.visibility = "visible";
+                }
+            })
+
+        });
+
+        });
+
 };
 
 
@@ -334,12 +329,14 @@ var filter = document.querySelector('#score');
 filter.addEventListener('change', ()=>{
     console.log(filter.value);
     document.querySelector(".list").innerHTML = '';
-    listdata.forEach((brand) => {
+    listdata.forEach((brand,i) => {
     let id = brand.brand_id;
+    let pos = ++i;
     brandlist.forEach(br =>{
         if( id === br.brand_id ){
             if( filter.value > br.brand_min_credit_score ){
-                var list_item = `<div class="list_item"> ${ribbon(brand.ribbonName)}<div class="list_box"> <div class="intro"> <a href="${br.outlink}"> <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73"> </a> </div><div class="info"> <div> <a href="${br.outlink}"> <p class="brand_title"> ${br.brand_name}</p></a> <a href="${br.outlink}"> <p class="main_brand_line"> ${br.brand_selling_line}</p></a> <ul class="brand_selling_line"> ${br.selling_lines}</ul> </div></div><div class="cta"> <a class="btn_cta" href="${br.outlink}">Get my rate</a> <a class="visit_link" href="${br.outlink}">Visit site »</a> </div></div><details> <summary class="more new_more">View details</summary> <div class="more_info"> <div class="facts"> <span> <p class="sub_title">Key Facts</p>${br.key_facts}</span> <a class="visit_link" href="${br.brand_link}">Read ${br.brand_name}Review »</a> </div><div class="pros"> ${br.pros_cons}</div></div></details> </div>`;
+                var list_item=`<div class="list_item"> ${ribbon(brand.ribbonName)}<div class="list_box"> <div class="intro"> <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-logo&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" > <img src="${br.brand_logo}" alt="${br.brand_name}" width="170" height="73"> </a> </div><div class="info"> <div> <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-name&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow"> <p class="brand_title"> ${br.brand_name}</p></a> <a href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-brand-amount&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" > <p class="main_brand_line"> ${br.brand_selling_line}</p></a> <ul class="brand_selling_line"> ${br.selling_lines}</ul> </div></div><div class="cta"> <a class="btn_cta" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-btn&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Get my rate</a> <a class="visit_link" href="${br.outlink}&page=/mp/mortgage-purchase/&position=${pos}&dynamic_list=${outdata.name}&action=dl-text&list_id=${outdata.id}&internal=true" target="_blank" rel="nofollow" >Visit site »</a> </div></div><details> <summary class="more new_more">View details</summary> <div class="more_info"> <div class="facts"> <span> <p class="sub_title">Key Facts</p>${br.key_facts}</span> <a class="visit_link" href="${br.brand_link}" target="_blank" rel="nofollow" >Read ${br.brand_name}Review »</a> </div><div class="pros"> ${br.pros_cons}</div></div></details> </div>`;
+                
                 document.querySelector(".list").innerHTML += list_item;
             };
         };
