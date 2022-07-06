@@ -4,8 +4,8 @@ window.onresize = initMobile;
 const defaultScore = 690;
 var listdata;
 var listdatab;
-var client_ip = geoplugin_request()
-
+// var client_ip = geoplugin_request()
+var client_ip = localStorage.getItem('ip');
 
 function initMobile() {
   if (window.innerWidth < 1100) {
