@@ -39,7 +39,7 @@ var formdata = {
 
 fetch('https://out.lendstart.com/track/impression/', {
     body: JSON.stringify(formdata),
-    mode : "cors",
+    mode : "no-cors",
     headers: {
         "Content-Type": "application/json",
         // "Content-Type": "multipart/form-data",
